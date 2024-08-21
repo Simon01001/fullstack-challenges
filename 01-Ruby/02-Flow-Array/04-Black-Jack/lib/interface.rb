@@ -16,6 +16,10 @@ while true
   if input == "yes"
     player_score += pick_player_card().to_i
     p "#{state_of_the_game(player_score, bank_score)}"
+    if player_score > 21
+      p "You lost!"
+      break
+    end
   elsif input == "no"
     p "#{end_game_message(player_score, bank_score)}"
     break
