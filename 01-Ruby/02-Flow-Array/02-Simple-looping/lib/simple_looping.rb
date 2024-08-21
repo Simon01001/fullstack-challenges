@@ -1,5 +1,4 @@
 def sum_with_for(min, max)
-  # CONSTRAINT: you should use a for..end structure
   total = 0
   if min > max
     return -1
@@ -9,8 +8,8 @@ def sum_with_for(min, max)
   end
   return total
 end
+
 def sum_with_while(min, max)
-  # CONSTRAINT: you should use a while..end structure
   total = 0
   if min > max
     return -1
