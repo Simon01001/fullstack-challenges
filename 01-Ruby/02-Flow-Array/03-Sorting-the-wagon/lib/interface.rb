@@ -18,10 +18,11 @@ end
 # TODO: Then call `wagon_sort` method defined in the wagon_sort.rb
 #       file and display the sorted student list
 sorted_students = wagon_sort(students)
+puts "Congratulations! Your Wagon has #{sorted_students.length} student#{sorted_students.length > 1 ? "s" : ""}:"
 if sorted_students.length == 1
-  p "Congratulations! Your Wagon has #{sorted_students.length} student: #{sorted_students.join}"
+  puts "#{sorted_students.join}"
 else
   and_students = sorted_students[-2..]
   comma_students = sorted_students - and_students
-  p "Congratulations! Your Wagon has #{sorted_students.length} students: #{comma_students.join(', ')}, #{and_students.join(' and ')}"
+  puts "#{comma_students.join(', ')}, #{and_students.join(' and ')}"
 end
