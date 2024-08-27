@@ -15,11 +15,11 @@ def run_game(attempt, grid, start_time, end_time)
   user = JSON.parse(user_serialized)
   puts user
 
-  if user["found"] == true# && attempt
+  if user["found"] == true #&& grid.match(attempt)
     score = (attempt.length * 10) - (end_time - start_time)
-    return {score: "#{score.to_i}", message: "well done", time: "#{(end_time - start_time).to_i}"}
+    return {score: score.to_i, message: "well done", time: end_time - start_time.to_i}
   elsif user["found"] == false
     score = 0
-    return {score: "#{score.to_i}", message: "not in the grid", time: "#{(end_time - start_time).to_i}"}
+    return {score: score.to_i, message: "not in the grid", time: (end_time - start_time).to_i}
   end
 end
