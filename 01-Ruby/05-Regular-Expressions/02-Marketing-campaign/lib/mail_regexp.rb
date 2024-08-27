@@ -23,29 +23,15 @@ end
 
 def group_by_tld(emails)
   # TODO: return a Hash with emails grouped by TLD
-  regex = /[a-z]+\z/
-  h = {}
-  emails.each do |i|
-    h[i.match(regex).to_s] = i.split
+  grouped_emails = Hash.new { |hash, key| hash[key] = [] }
+  emails.each do |email|
+    tld = email.match(/\.[a-zA-Z]{2,}$/).to_s[1..]
+    grouped_emails[tld] << email
   end
-
-
-
-  #emails.each { |e| h[e] = e }
-  puts h
-  return h
-
-
+  puts grouped_emails
+  return grouped_emails
 end
 
-emails = [
-  "thomasgmail.com",
-  "kevin@yahoo.fr",
-  "edward@gmail.fr",
-  "elsa@",
-  "julien@mdn.fr",
-  "dimitri@berlin.de"
-]
 group_by_tld(emails)
 def compose_mail(email)
   # TODO: return a Hash with username, domain and tld extracted from email
