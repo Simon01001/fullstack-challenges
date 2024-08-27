@@ -1,9 +1,6 @@
 require 'csv'
 def most_successful(number, max_year, file_path)
   # TODO: return an array of most successful movies before `max_year`
-  file_path = "/home/simon/code/Simon01001/fullstack-challenges/01-Ruby/06-Parsing/01-CSV-Parsing/lib/movies.csv"
-
-
   filtered = []
   CSV.foreach(file_path) do |row|
     if row[1].to_i < max_year
