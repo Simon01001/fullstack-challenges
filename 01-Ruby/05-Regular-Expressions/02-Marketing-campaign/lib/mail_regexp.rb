@@ -28,7 +28,6 @@ def group_by_tld(emails)
     tld = email.match(/\.[a-zA-Z]{2,}$/).to_s[1..]
     grouped_emails[tld] << email
   end
-  puts grouped_emails
   return grouped_emails
 end
 
