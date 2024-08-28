@@ -46,7 +46,7 @@ class BankAccount
     if @password == ""
       return "no password given"
     elsif @password != args[:password]
-      return "wrong passsword"
+      return "wrong password"
     elsif @password == args[:password]
       return @transactions.join
     end
