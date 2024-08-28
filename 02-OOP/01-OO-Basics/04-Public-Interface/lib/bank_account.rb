@@ -10,6 +10,7 @@ class BankAccount
   # - you can print transactions only with a password
   # - you can withdraw or deposit money
   # - You can see the balance of the account (through the balance variable)
+  attr_accessor :password, :transactions, :balance, :name, :iban
 
   MIN_DEPOSIT = 100
 
@@ -28,25 +29,39 @@ class BankAccount
   def withdraw(amount)
     # TODO: Call add_transaction with the right argument
     # TODO: returns a string with a message
+    add_transaction(amount)
+    return "You've just withdrawn #{amount} euros"
   end
 
   def deposit(amount)
     # TODO: Call add_transaction with the right argument
     # TODO: returns a string with a message
+    add_transaction(amount)
+    return "You've just deposited #{amount} euros"
   end
 
   def transactions_history(args = {})
     # TODO: Check if there is a password and if so if it is correct
     # TODO: return a string displaying the transactions, BUT NOT return the transaction array!
+    if @password == ""
+      return "no password given"
+    elsif @password != args[:password]
+      return "wrong passsword"
+    elsif @password == args[:password]
+      return @transactions.join
+    end
+
   end
 
   def iban
     # TODO: Hide the middle of the IBAN like FR14**************606 and return it
+    return @iban.gsub(@iban[4..-4], "**************")
   end
 
   def to_s
     # Method used when printing account object as string (also used for string interpolation)
     # TODO: return a string with the account owner, the hidden iban and the balance of the account
+    return "#{@name}, #{iban}, #{balance}"
   end
 
   private
@@ -54,5 +69,7 @@ class BankAccount
   def add_transaction(amount)
     # TODO: add the amount in the transactions array
     # TODO: update the current balance (which represents the balance of the account)
+    @balance += amount
+    @transactions << amount
   end
 end
