@@ -4,13 +4,13 @@ class Chicken < Animal
   attr_reader :eggs
 
   def initialize(gender)
-    @energy = 0
+    super()
     @gender = gender
     @eggs = 0
   end
 
   def feed!
-    @energy += 1
+    super()
     if @gender == 'female'
       @eggs += 2
     elsif @gender == 'male'

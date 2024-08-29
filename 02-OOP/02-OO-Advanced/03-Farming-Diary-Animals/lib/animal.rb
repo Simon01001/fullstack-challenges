@@ -1,5 +1,4 @@
 class Animal
-
   def initialize
     @energy = 0
   end
@@ -7,5 +6,4 @@ class Animal
   def feed!
     @energy += 1
   end
-
 end

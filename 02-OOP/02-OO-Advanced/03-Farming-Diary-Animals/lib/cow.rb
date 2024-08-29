@@ -1,16 +1,17 @@
 require_relative 'animal'
 
 class Cow < Animal
+
   attr_reader :milk
 
   def initialize
-    @energy = 0
+    super()
     @milk = 0
   end
 
   def feed!
+    super()
     @milk += 2
-    @energy += 1
   end
 
   def talk
