@@ -1,1 +1,32 @@
-# TODO: Implement the Cookbook class that will be our repository
+require_relative "recipe"
+require_relative "controller"
+require "csv"
+
+class Cookbook
+  def initialize(filepath)
+    @filepath = filepath
+    @recipes = []
+  end
+
+  def save_csv(filepath)
+    CSV.open(filepath, "wb") do |csv|
+      csv << @name
+    end
+  end
+
+  def all
+    @recipes
+  end
+
+  def create(recipe)
+    @recipes << recipe
+  end
+
+  def destroy(index)
+    @recipes.delete_at(index)
+  end
+end
+
+my_cookbook = Cookbook.new('lib/recipes.csv')
+puts my_cookbook
+my_cookbook.save_csv('lib/recipes.csv')

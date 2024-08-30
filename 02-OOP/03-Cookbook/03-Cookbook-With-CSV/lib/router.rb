@@ -9,7 +9,7 @@ class Router
     puts "           --           "
 
     while @running
-      display_tasks
+      display
       action = gets.chomp.to_i
       print `clear`
       route_action(action)
@@ -33,7 +33,7 @@ class Router
     @running = false
   end
 
-  def display_tasks
+  def display
     puts ""
     puts "What do you want to do next?"
     puts "1 - List all recipes"
