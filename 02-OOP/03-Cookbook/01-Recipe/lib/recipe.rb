@@ -5,6 +5,3 @@ class Recipe
     @description = description
   end
 end
-
-recipe = Recipe.new("chocolate cake", "a delicious chocolate cake")
-p recipe
