@@ -8,11 +8,11 @@ class Cookbook
     @recipes = []
   end
 
-  def save_csv(filepath)
-    CSV.open(filepath, "wb") do |csv|
-      csv << @name
-    end
-  end
+  #def save_csv(filepath)
+    #CSV.open(filepath, "wb") do |csv|
+      #csv << @name
+    #end
+  #end
 
   def all
     @recipes
@@ -26,7 +26,3 @@ class Cookbook
     @recipes.delete_at(index)
   end
 end
-
-my_cookbook = Cookbook.new('lib/recipes.csv')
-puts my_cookbook
-my_cookbook.save_csv('lib/recipes.csv')
