@@ -16,3 +16,6 @@ class Employee
     @role == 'rider'
   end
 end
+
+employee = Employee.new(id: 1, username: "paul", password: "secret", role: "rider")
+p employee
