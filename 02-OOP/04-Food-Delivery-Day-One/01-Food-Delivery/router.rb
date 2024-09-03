@@ -1,46 +1,45 @@
 class Router
-  def initialize(meals_controller)
+  def initialize(meals_controller, customers_controller)
     @meals_controller = meals_controller
+    @customers_controller = customers_controller
     @running = true
   end
 
   def run
-    puts "Welcome to the Food Delivery Service!"
-    puts "                --                   "
-
-    while @running
-      puts "TODO"
-      display
-      #action = gets.chomp.to_i
-      #print `clear`
-      #route_action(action)
-      stop
+    while @unnung
+      print_menu
+      choice = gets.chomp.to_i
+      print 'clear'
+      route_action(choice)
     end
+  end
+
+  def print_menu
+    puts "-----------------"
+    puts "------MENU-------"
+    puts "-----------------"
+    puts "1. Add new meal"
+    puts "2. List all meals"
+    puts "3. Add new customer"
+    puts "4. List all customers"
+    puts "8. Exit"
+    print "> "
   end
 
   private
 
-  #def route_action(action)
-    #case action
-    #when 1 then @controller.list
-    #when 2 then @controller.add
-    #when 3 then @controller.remove
-    #when 4 then stop
-    #else
-      #puts "Please press 1, 2, 3 or 4"
-    #end
-  #end
-
-  def stop
-    @running = false
+  def route_action(choice)
+    case choice
+    when 1 then @meals_controller.add
+    when 2 then @meals_controller.list
+    when 3 then @customers_controller.add
+    when 4 then @customers_controller.list
+    when 8 then stop!
+    else puts "try again"
+    end
   end
 
-  def display
-    puts ""
-    puts "What do you want to do next?"
-    puts "1 - "
-    puts "2 - "
-    puts "3 - "
-    puts "4 - "
+  def stop!
+    @running = false
   end
 end

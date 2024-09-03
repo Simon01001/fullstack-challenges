@@ -1,6 +1,6 @@
 class Meal
-  attr_writer :id
-  attr_reader :id, :name, :price
+  attr_accessor :id
+  attr_reader :name, :price
 
   def initialize(arguments = {})
     @id = arguments[:id]
@@ -8,5 +8,3 @@ class Meal
     @price = arguments[:price]
   end
 end
-pizza = Meal.new({ id: 1, name: "pizza", price: 12 })
-p pizza
