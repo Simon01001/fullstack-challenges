@@ -28,7 +28,7 @@ class Router
   end
 
   def route_rider_action
-    display_ider_action
+    display_rider_menu
     action = gets.chomp.to_i
     print 'clear'
     rider_action(action)

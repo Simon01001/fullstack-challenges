@@ -11,7 +11,11 @@ class Order
   end
 
   def delivered?
-    @delivered
+    if @delivered == 'true'
+      return true
+    elsif @delivered == 'false'
+      return false
+    end
   end
 
   def deliver!
