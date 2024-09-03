@@ -6,10 +6,10 @@ class Router
   end
 
   def run
-    while @unnung
+    while @running
       print_menu
       choice = gets.chomp.to_i
-      print 'clear'
+      #print 'clear'
       route_action(choice)
     end
   end
@@ -25,8 +25,6 @@ class Router
     puts "8. Exit"
     print "> "
   end
-
-  private
 
   def route_action(choice)
     case choice
