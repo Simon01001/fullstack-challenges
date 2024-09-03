@@ -9,20 +9,10 @@ class Employee
   end
 
   def manager?
-    if arguments[:role] == "manager"
-      return true
-    else
-      return false
-    end
-    @role == manager
+    @role == 'manager'
   end
 
   def rider?
-    if arguments[:role] == "rider"
-      return true
-    else
-      return false
-    end
-    @role == rider
+    @role == 'rider'
   end
 end
