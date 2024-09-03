@@ -13,6 +13,7 @@ class Employee
       return true
     else
       return false
+    end
     @role == manager
   end
 
