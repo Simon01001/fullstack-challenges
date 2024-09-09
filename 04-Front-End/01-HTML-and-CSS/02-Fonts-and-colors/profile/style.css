@@ -1,0 +1,32 @@
+h1 {
+  color: rgb(22, 50, 91);
+  font-family: "Bebas Neue", sans-serif;
+}
+
+h2 {
+  color: rgb(65, 179, 162);
+  font-family: "Inria Sans", sans-serif;
+}
+
+p {
+  font-family: "Inria Sans", sans-serif;
+}
+
+#link {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(102, 123, 198);
+  font-family: "Inria Sans", sans-serif;
+}
+
+#link:hover {
+  color: rgb(38, 53, 93);
+}
+
+li {
+  font-size: 30px;
+}
+
+li:hover {
+  color: rgb(175, 71, 210);
+}
