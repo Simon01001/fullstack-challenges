@@ -3,6 +3,8 @@
 
 /* Importing all components file */
 @import url("components/button.css");
+@import url("components/avatar.css");
+@import url("components/banner.css");
 
 /* General for fonts and colors */
 body {
@@ -17,4 +19,8 @@ a {
 }
 .text-center {
   text-align: center;
+}
+
+h1 {
+  padding: 30px;
 }
