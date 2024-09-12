@@ -23,6 +23,7 @@ const newMessage = () => {
 
 const appendMessageToDom = (message) => {
   // TODO: append the given message to the DOM (as a new row of `#inbox`)
+  document.getElementById("inbox").insertAdjacentHTML("beforeend", `${newMessage}`);
 };
 
 const refresh = () => {
