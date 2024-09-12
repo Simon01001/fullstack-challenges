@@ -6,6 +6,10 @@ import runChallenges from "../spec/inbox_examiner.js";
 
 const hasNewMessage = () => {
   // TODO: return true with a probability of 20%.
+  const number = Math.floor(Math.random() * 5) + 1;
+  if (number === 1) {
+    return true;
+  } return false;
 };
 
 const newMessage = () => {
