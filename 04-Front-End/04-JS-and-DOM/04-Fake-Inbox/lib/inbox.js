@@ -14,6 +14,11 @@ const hasNewMessage = () => {
 
 const newMessage = () => {
   // TODO: return a random message as an object with two keys, subject and sender
+  const generateRandomString = (length = 6) => Math.random().toString(20).substr(2, length);
+  return {
+    sender: `${generateRandomString}`,
+    subject: `${generateRandomString}`
+  };
 };
 
 const appendMessageToDom = (message) => {
