@@ -10,10 +10,11 @@ all.forEach((card) => {
     const updatedBalance = document.getElementById("balance");
     updatedBalance.innerText = balance;
     if (balance < 10) {
-      balance = 10;
+      balance += 10;
     }
     const prize = document.querySelector(".scratchcard");
     balance += parseInt(prize.dataset.amount, 10);
     prize.dataset.scratched = "true";
+    card.innerText = prize.dataset.amount;
   });
 });
