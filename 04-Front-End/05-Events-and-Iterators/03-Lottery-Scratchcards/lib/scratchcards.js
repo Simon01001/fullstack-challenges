@@ -12,9 +12,9 @@ all.forEach((card) => {
     if (balance < 10) {
       balance += 10;
     }
-    const prize = document.querySelector(".scratchcard");
-    balance += parseInt(prize.dataset.amount, 10);
-    prize.dataset.scratched = "true";
-    card.innerText = prize.dataset.amount;
+    // const prize = document.querySelector(".scratchcard");
+    balance += parseInt(event.currentTarget.dataset.amount, 10);
+    event.currentTarget.dataset.scratched = "true";
+    card.innerText = `${event.currentTarget.dataset.amount} €`;
   });
 });
