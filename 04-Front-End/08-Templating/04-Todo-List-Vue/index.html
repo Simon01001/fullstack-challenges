@@ -24,8 +24,14 @@
     <div class="col-lg-4 bg-white rounded shadow-sm p-5">
      <h1 class="mb-3">🗒 My Todo List</h1>
      <div id="todosContainer">
-       {{message}}
-       <!-- Your code goes here -->
+       <div v-cloak>
+        <div v-for="todo in todos">
+          <div class="shadow-sm rounded px-4 py-3 mb-2 border d-flex">
+            <input id="box" class="d-flex form-check-input me-1" type="checkbox" v-bind:checked="todo.done">
+            {{todo.title}}
+          </div>
+        </div>
+       </div>
      </div>
    </div>
   </div>
