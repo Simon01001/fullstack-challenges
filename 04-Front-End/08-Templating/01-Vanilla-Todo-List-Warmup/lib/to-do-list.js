@@ -5,7 +5,7 @@ const todos = [
   { title: "Water the plants", done: true }
 ];
 const listContainer = document.getElementById("todosContainer");
-const checkbox = document.querySelector("input[type=checkbox]")
+const checkbox = document.querySelector("input[type=checkbox]");
 
 // To-do item HTML 👇
 todos.forEach((todo) => {
