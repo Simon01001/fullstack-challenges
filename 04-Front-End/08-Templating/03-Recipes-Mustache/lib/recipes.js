@@ -23,5 +23,10 @@ const recipes = [
     difficulty: 10
   }
 ];
-
+const recipesContainer = document.querySelector("#recipesContainer");
 // TODO: Your code goes below:
+const template = document.querySelector("#recipeTemplate").innerHTML;
+recipes.forEach((recipe) => {
+  const output = Mustache.render(template, recipe);
+  recipesContainer.insertAdjacentHTML("beforeend", output);
+});
