@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus";
 
 export default class extends Controller {
-  static targets = ["source"]
+  static targets = ["source", "button"]
 
   connect() {
     console.log("hello");
@@ -9,5 +9,7 @@ export default class extends Controller {
 
   copy() {
     navigator.clipboard.writeText(this.sourceTarget.value);
+    this.buttonTarget.innerText = "Copied!";
+    this.buttonTarget.setAttribute("disabled", "");
   }
 }
