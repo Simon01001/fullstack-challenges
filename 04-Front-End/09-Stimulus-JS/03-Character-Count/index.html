@@ -21,8 +21,13 @@
   </head>
 
   <body>
-    <div class="container p-5">
+    <div class="container p-5" data-controller="character-count-controller">
       <!-- TODO: Code here -->
+      <textarea class="input-group w-50" data-character-count-controller-target="text" data-action="keyup->character-count-controller#updateCounter">
+      </textarea>
+      <div class="input-group w-10" class="form-control" data-character-count-controller-target="counter">
+
+      </div>
     </div>
 
     <script src="lib/index.js" type="module"></script>
